@@ -2,15 +2,11 @@ import React from 'react';
 import defaultAvatar from '../../default-avatar.svg';
 import PropTypes from 'prop-types';
 
-function Profile ({ name, tag, location, avatar, stats }) {
+function Profile({ name, tag, location, avatar, stats }) {
     return (
         <div class="profile">
             <div class="description">
-                <img
-                src={avatar}
-                alt="Аватар пользователя"
-                class="avatar"
-                />
+                <img src={avatar} alt="Аватар пользователя" class="avatar" />
                 <p class="name">{name}</p>
                 <p class="tag">@{tag}</p>
                 <p class="location">{location}</p>
@@ -31,8 +27,8 @@ function Profile ({ name, tag, location, avatar, stats }) {
                 </li>
             </ul>
         </div>
-    )
-};
+    );
+}
 
 Profile.defaultProps = {
     avatar: defaultAvatar,
@@ -48,6 +44,6 @@ Profile.propTypes = {
     // followers: PropTypes.number.isRequired,
     // views: PropTypes.number.isRequired,
     // likes: PropTypes.number.isRequired,
-}
+};
 
 export default Profile;
