@@ -7,11 +7,7 @@ function Profile({ name, tag, location, avatar, stats }) {
     return (
         <div className={styles.profile}>
             <div className={styles.description}>
-                <img
-                    src={avatar}
-                    alt="Аватар пользователя"
-                    className={styles.avatar}
-                />
+                <img src={avatar} alt="avatar" className={styles.avatar} />
                 <p className={styles.name}>{name}</p>
                 <p className={styles.tag}>@{tag}</p>
                 <p className={styles.location}>{location}</p>
@@ -37,18 +33,15 @@ function Profile({ name, tag, location, avatar, stats }) {
 
 Profile.defaultProps = {
     avatar: defaultAvatar,
+    location: 'n/a',
 };
 
 Profile.propTypes = {
     name: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
+    location: PropTypes.string,
     avatar: PropTypes.string,
     stats: PropTypes.objectOf(PropTypes.number.isRequired).isRequired,
-    // stats: PropTypes.object.isRequired,
-    // followers: PropTypes.number.isRequired,
-    // views: PropTypes.number.isRequired,
-    // likes: PropTypes.number.isRequired,
 };
 
 export default Profile;
